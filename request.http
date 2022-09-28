@@ -1,14 +1,16 @@
-### API(w/h parameters)
-https://http-practice.herokuapp.com
-### API(status)
-https://http-practice.herokuapp.com/status
-###GET application status in json format
-https://http-practice.herokuapp.com/status
-Accept:application/json
-### GET app wilders
- https://http-practice.herokuapp.com/wilders/1646363
+### GET app wilders sans filtrage
+GET https://http-practice.herokuapp.com/wilders/
 
-###POST
+### GET app wilders + filtrage name/language
+GET https://http-practice.herokuapp.com/wilders?name=Maria%20Ma&language=PHP
+
+### POST creation de wilder, format URL-encoded
+POST https://http-practice.herokuapp.com/wilders
+Content-Type: application/x-www-form-urlencoded
+
+name=Maria%20Ma&language=PHP
+
+###POST creation de wilder, format JSON
 POST https://http-practice.herokuapp.com/wilders
 Content-Type: application/json
 
@@ -17,11 +19,17 @@ Content-Type: application/json
   "language": "JavaScript"
 }
 
+### GET lire le wilder que j'ai cree
+GET https://http-practice.herokuapp.com/wilders/1646366
+
+
 ###PUT
-PUT https://http-practice.herokuapp.com/wilders/1646363
+PUT https://http-practice.herokuapp.com/wilders/1646366
 Content-Type: application/json
 
 {
   "name": "HI Longbeauty Natalia",
   "language": "JavaScript"
 }
+###DELETE
+DELETE https://http-practice.herokuapp.com/wilders/1646366
